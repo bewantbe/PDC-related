@@ -1,0 +1,612 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1.5cm
+\topmargin 1.5cm
+\rightmargin 1.5cm
+\bottommargin 1.5cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Matrix Formulas That Is Usefull In Least Square Analysis
+\end_layout
+
+\begin_layout Standard
+(You could always swap indexes properly to get similar results)
+\end_layout
+
+\begin_layout Section
+Difference of Quadratic Forms, Inverse Matrices and Solution of Linear Systems
+\end_layout
+
+\begin_layout Standard
+For invertable 
+\begin_inset Formula $\left(n_{1}+n_{2}+n_{3}\right)\times\left(n_{1}+n_{2}+n_{3}\right)$
+\end_inset
+
+ matrix 
+\begin_inset Formula $R$
+\end_inset
+
+ (no need symmetric)
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula 
+\begin{equation}
+R=\left[\begin{array}{ccc}
+R^{(xx)} & R^{(xy)} & R^{(xz)}\\
+R^{(yx)} & R^{(yy)} & R^{(yz)}\\
+R^{(zx)} & R^{(zy)} & R^{(zz)}
+\end{array}\right]^{-1}=\left[\begin{array}{ccc}
+Q^{(xx)} & Q^{(xy)} & Q^{(xz)}\\
+Q^{(yx)} & Q^{(yy)} & Q^{(yz)}\\
+Q^{(zx)} & Q^{(zy)} & Q^{(zz)}
+\end{array}\right]
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For any 
+\begin_inset Formula $\left[\begin{array}{ccc}
+\vec{r}^{(x|x)} & \vec{r}^{(x|y)} & \vec{r}^{(x|z)}\end{array}\right]$
+\end_inset
+
+ (
+\begin_inset Formula $n_{4}\times\left(n_{1}+n_{2}+n_{3}\right)$
+\end_inset
+
+ matrix)
+\end_layout
+
+\begin_layout Standard
+Define
+\end_layout
+
+\begin_layout Standard
+(replace transpose 
+\begin_inset Formula $\cdot^{T}$
+\end_inset
+
+ to conjugate transpose 
+\begin_inset Formula $\cdot^{H}$
+\end_inset
+
+ for matrix with complex entries)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\textrm{SS}_{R[x,z]}=\left[\begin{array}{cc}
+\vec{r}^{(x|x)} & \vec{r}^{(x|z)}\end{array}\right]\left[\begin{array}{cc}
+R^{(xx)} & R^{(xz)}\\
+R^{(zx)} & R^{(zz)}
+\end{array}\right]^{-1}\left[\begin{array}{cc}
+\vec{r}^{(x|x)} & \vec{r}^{(x|z)}\end{array}\right]^{T}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\textrm{SS}_{R[x,y,z]}=\left[\begin{array}{ccc}
+\vec{r}^{(x|x)} & \vec{r}^{(x|y)} & \vec{r}^{(x|z)}\end{array}\right]\left[\begin{array}{ccc}
+R^{(xx)} & R^{(xy)} & R^{(xz)}\\
+R^{(yx)} & R^{(yy)} & R^{(yz)}\\
+R^{(zx)} & R^{(zy)} & R^{(zz)}
+\end{array}\right]^{-1}\left[\begin{array}{ccc}
+\vec{r}^{(x|x)} & \vec{r}^{(x|y)} & \vec{r}^{(x|z)}\end{array}\right]^{T}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\left[\begin{array}{ccc}
+\vec{a}^{(11)} & \vec{a}^{(12)} & \vec{a}^{(13)}\end{array}\right]\left[\begin{array}{ccc}
+R^{(xx)} & R^{(xy)} & R^{(xz)}\\
+R^{(yx)} & R^{(yy)} & R^{(yz)}\\
+R^{(zx)} & R^{(zy)} & R^{(zz)}
+\end{array}\right]=\left[\begin{array}{ccc}
+\vec{r}^{(x|x)} & \vec{r}^{(x|y)} & \vec{r}^{(x|z)}\end{array}\right]
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\left[\begin{array}{ccc}
+\vec{a}_{T}^{(11)} & \vec{a}_{T}^{(12)} & \vec{a}_{T}^{(13)}\end{array}\right]\left[\begin{array}{ccc}
+R^{(xx)} & R^{(xy)} & R^{(xz)}\\
+R^{(yx)} & R^{(yy)} & R^{(yz)}\\
+R^{(zx)} & R^{(zy)} & R^{(zz)}
+\end{array}\right]^{T}=\left[\begin{array}{ccc}
+\vec{r}^{(x|x)} & \vec{r}^{(x|y)} & \vec{r}^{(x|z)}\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Then the difference of the quadratic form is
+\end_layout
+
+\begin_layout Standard
+(Assume the inverse matries in the expressions are all valid, pseudo-inverse
+ could also work)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\textrm{SS}_{R[x,y,z]}-\textrm{SS}_{R[x,z]}=\vec{a}^{(12)}\left(Q^{(yy)}\right)^{-1}\left(\vec{a}_{T}^{(12)}\right)^{T}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The 
+\begin_inset Formula $\left(Q^{(yy)}\right)^{-1}$
+\end_inset
+
+ might be expressed as
+\end_layout
+
+\begin_layout Standard
+(Swap index 
+\begin_inset Formula $x$
+\end_inset
+
+ and 
+\begin_inset Formula $z$
+\end_inset
+
+ will give another expression)
+\begin_inset Formula 
+\begin{eqnarray}
+\left(Q^{(yy)}\right)^{-1} & = & R^{(yy)}-R^{(yx)}\left(R^{(xx)}\right)^{-1}R^{(xy)}\\
+ &  & -\left(R^{(yz)}-R^{(yx)}\left(R^{(xx)}\right)^{-1}R^{(xz)}\right)\left(R^{(zz)}-R^{(zx)}\left(R^{(xx)}\right)^{-1}R^{(xz)}\right)^{-1}\left(R^{(zy)}-R^{(zx)}\left(R^{(xx)}\right)^{-1}R^{(xy)}\right)\nonumber 
+\end{eqnarray}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The inverse matrices have relation
+\begin_inset Formula 
+\begin{equation}
+\left[\begin{array}{cc}
+P^{(xx)} & P^{(xy)}\\
+P^{(yx)} & P^{(yy)}
+\end{array}\right]\triangleq\left[\begin{array}{cc}
+R^{(xx)} & R^{(xy)}\\
+R^{(yx)} & R^{(yy)}
+\end{array}\right]^{-1}=\left[\begin{array}{cc}
+Q^{(xx)} & Q^{(xy)}\\
+Q^{(yx)} & Q^{(yy)}
+\end{array}\right]-\left[\begin{array}{c}
+Q^{(xz)}\\
+Q^{(yz)}
+\end{array}\right]\left(Q^{(zz)}\right)^{-1}\left[\begin{array}{cc}
+Q^{(zx)} & Q^{(zy)}\end{array}\right]\label{eq:inv-2-from-3}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula 
+\[
+\left(Q^{(zz)}\right)^{-1}=R^{(zz)}-\left[\begin{array}{cc}
+R^{(zx)} & R^{(zy)}\end{array}\right]\left[\begin{array}{cc}
+R^{(xx)} & R^{(xy)}\\
+R^{(yx)} & R^{(yy)}
+\end{array}\right]^{-1}\left[\begin{array}{c}
+R^{(xz)}\\
+R^{(yz)}
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If we solve
+\begin_inset Formula 
+\[
+\left[\begin{array}{cc}
+\vec{b}^{(11)} & \vec{b}^{(12)}\end{array}\right]\left[\begin{array}{cc}
+R^{(xx)} & R^{(xy)}\\
+R^{(yx)} & R^{(yy)}
+\end{array}\right]=\left[\begin{array}{cc}
+\vec{r}^{(x|x)} & \vec{r}^{(x|y)}\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Then there is relation
+\end_layout
+
+\begin_layout Standard
+(There are 6 of these relations)
+\begin_inset Formula 
+\begin{equation}
+b^{(12)}=a^{(12)}-a^{(13)}\left(Q^{(zz)}\right)^{-1}Q^{(zy)}\label{eq:b-from-a}
+\end{equation}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{equation}
+a^{(12)}\left(I-\left(Q^{(yy)}\right)^{-1}Q^{(yz)}\left(Q^{(zz)}\right)^{-1}Q^{(zy)}\right)=b^{(12)}+b_{[xz]}^{(13)}\left(Q^{(zz)}\right)^{-1}Q^{(zy)}
+\end{equation}
+
+\end_inset
+
+or (due to Eq.
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "eq:inv-2-from-3"
+
+\end_inset
+
+)
+\begin_inset Formula 
+\[
+a^{(12)}\left(Q^{(yy)}\right)^{-1}P^{(yy)}=b^{(12)}+b^{(13)}\left(Q^{(zz)}\right)^{-1}Q^{(zy)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Also
+\begin_inset Formula 
+\[
+\vec{b}^{(11)}=\vec{a}^{(11)}-a^{(13)}\left(Q^{(zz)}\right)^{-1}Q^{(zx)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In matrix form
+\begin_inset Formula 
+\[
+\left[\begin{array}{cc}
+\vec{b}^{(11)} & \vec{b}^{(12)}\end{array}\right]=\left[\begin{array}{cc}
+\vec{a}^{(11)} & \vec{a}^{(12)}\end{array}\right]-a^{(13)}\left(Q^{(zz)}\right)^{-1}\left[\begin{array}{cc}
+Q^{(zx)} & Q^{(zy)}\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Appendix: Formulas Used to Derive Above Results
+\end_layout
+
+\begin_layout Subsection
+Binomial inverse theorem
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(A+UBV\right)^{-1}=A^{-1}-A^{-1}UB\left(B+BVA^{-1}UB\right)^{-1}BVA^{-1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Specially
+\begin_inset Formula 
+\[
+\left(A-BD^{-1}C\right)^{-1}=A^{-1}+A^{-1}B\left(D-CA^{-1}B\right)CA^{-1}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Inverse of 
+\begin_inset Formula $\left(n_{1}+n_{2}\right)\times\left(n_{1}+n_{2}\right)$
+\end_inset
+
+ matrix
+\end_layout
+
+\begin_layout Standard
+(Assume the inverse matries in the expressions are all valid)
+\end_layout
+
+\begin_layout Standard
+Use row elimination, get
+\begin_inset Formula 
+\[
+\left[\begin{array}{cc}
+a_{11} & a_{12}\\
+a_{21} & a_{22}
+\end{array}\right]^{-1}=\left[\begin{array}{cc}
+\left(a_{11}-a_{12}a_{22}^{-1}a_{21}\right)^{-1} & -\left(a_{11}-a_{12}a_{22}^{-1}a_{21}\right)^{-1}a_{12}a_{22}^{-1}\\
+-\left(a_{22}-a_{21}a_{11}^{-1}a_{12}\right)^{-1}a_{21}a_{11}^{-1} & \left(a_{22}-a_{21}a_{11}^{-1}a_{12}\right)^{-1}
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=\left[\begin{array}{cc}
+a_{11}^{-1}+a_{11}^{-1}a_{12}\left(a_{22}-a_{21}a_{11}^{-1}a_{12}\right)^{-1}a_{21}a_{11}^{-1} & -a_{11}^{-1}a_{12}\left(a_{22}-a_{21}a_{11}^{-1}a_{12}\right)^{-1}\\
+-a_{22}^{-1}a_{21}\left(a_{11}-a_{12}a_{22}^{-1}a_{21}\right)^{-1} & a_{22}^{-1}+a_{22}^{-1}a_{21}\left(a_{11}-a_{12}a_{22}^{-1}a_{21}\right)^{-1}a_{12}a_{22}^{-1}
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Known inverse matrix, get inverse of sub matrix
+\end_layout
+
+\begin_layout Standard
+Known
+\begin_inset Formula 
+\[
+\left[\begin{array}{cc}
+a_{11} & a_{12}\\
+a_{21} & a_{22}
+\end{array}\right]^{-1}=\left[\begin{array}{cc}
+b_{11} & b_{12}\\
+b_{21} & b_{22}
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Then 
+\begin_inset Formula $a_{22}^{-1}$
+\end_inset
+
+ can get from
+\begin_inset Formula 
+\[
+a_{22}^{-1}=b_{22}-b_{21}\left(b_{11}\right)^{-1}b_{12}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Inverse of 
+\begin_inset Formula $\left(n_{1}+n_{2}+n_{3}\right)\times\left(n_{1}+n_{2}+n_{3}\right)$
+\end_inset
+
+ maxtrix
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left[\begin{array}{ccc}
+a_{11} & a_{12} & a_{13}\\
+a_{21} & a_{22} & a_{23}\\
+a_{31} & a_{32} & a_{33}
+\end{array}\right]^{-1}=UD^{-1}L
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+U=\left[\begin{array}{ccc}
+I & -a_{11}^{-1}a_{12} & a_{11}^{-1}a_{12}\left(a_{22}-a_{21}a_{11}^{-1}a_{12}\right)^{-1}\left(a_{23}-a_{21}a_{11}^{-1}a_{13}\right)-a_{11}^{-1}a_{13}\\
+O & I & -\left(a_{22}-a_{21}a_{11}^{-1}a_{12}\right)^{-1}\left(a_{23}-a_{21}a_{11}^{-1}a_{13}\right)\\
+O & O & I
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+L=\left[\begin{array}{ccc}
+I & O & O\\
+-a_{21}a_{11}^{-1} & I & O\\
+\left(a_{32}-a_{31}a_{11}^{-1}a_{12}\right)\left(a_{22}-a_{21}a_{11}^{-1}a_{12}\right)^{-1}a_{21}a_{11}^{-1}-a_{31}a_{11}^{-1} & -\left(a_{32}-a_{31}a_{11}^{-1}a_{12}\right)\left(a_{22}-a_{21}a_{11}^{-1}a_{12}\right)^{-1} & I
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+D=\left[\begin{array}{ccc}
+a_{11} & O & O\\
+O & a_{22}-a_{21}a_{11}^{-1}a_{12} & O\\
+O & O & a_{33}-a_{31}a_{11}^{-1}a_{13}-\left(a_{32}-a_{31}a_{11}^{-1}a_{12}\right)\left(a_{22}-a_{21}a_{11}^{-1}a_{12}\right)^{-1}\left(a_{23}-a_{21}a_{11}^{-1}a_{13}\right)
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Note:
+\begin_inset Formula 
+\[
+\left[\begin{array}{ccc}
+1 & a_{12} & a_{13}\\
+0 & 1 & a_{23}\\
+0 & 0 & 1
+\end{array}\right]\left[\begin{array}{ccc}
+b_{1} & 0 & 0\\
+0 & b_{2} & 0\\
+0 & 0 & b_{3}
+\end{array}\right]\left[\begin{array}{ccc}
+1 & 0 & 0\\
+c_{21} & 1 & 0\\
+c_{31} & c_{32} & 1
+\end{array}\right]=\left[\begin{array}{ccc}
+b_{1}+a_{12}b_{2}c_{21}+a_{13}b_{3}c_{31} & a_{12}b_{2}+a_{13}b_{3}c_{32} & a_{13}b_{3}\\
+b_{2}c_{21}+a_{23}b_{3}c_{31} & b_{2}+a_{23}b_{3}c_{32} & a_{23}b_{3}\\
+b_{3}c_{31} & b_{3}c_{32} & b_{3}
+\end{array}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
